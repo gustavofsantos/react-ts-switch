@@ -1,0 +1,26 @@
+$accent: #ff0b55;
+$accent-darker: #d61d4e;
+$accent-lighter: #ffdee6;
+$light: #f1f1f1;
+$dark: #323232;
+
+$themes: (
+  light: (
+    accent: $accent,
+    accent-darker: $accent-darker,
+    accent-superlight: $accent-lighter,
+    background: $light,
+    background-darker: darken($light, 10%),
+    foreground: $dark,
+    foreground-darker: darken($dark, 10%)
+  ),
+  dark: (
+    accent: $accent,
+    accent-darker: $accent-darker,
+    accent-superlight: $accent-lighter,
+    background: $dark,
+    background-darker: darken($dark, 10%),
+    foreground: $light,
+    foreground-darker: darken($light, 10%)
+  )
+);

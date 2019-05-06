@@ -1,0 +1,53 @@
+$switch-width: 5.6rem;
+$switch-height: 3rem;
+$toggle-size: 2.4rem;
+
+.switch {
+  border-radius: calc(#{$switch-height}/2);
+  height: $switch-height;
+  width: $switch-width;
+  position: relative;
+  cursor: pointer;
+
+  &-toggle {
+    position: absolute;
+    border: none;
+    height: $toggle-size;
+    width: $toggle-size;
+    border-radius: 50%;
+    margin: calc((#{$switch-height} - #{$toggle-size}) / 2);
+
+    @include themify($themes) {
+      background-color: themed('background');
+    }
+
+    &.on {
+      transition: left 0.3s ease;
+      left: calc((#{$switch-width} - #{$toggle-size}) - (#{$switch-height} - #{$toggle-size}));
+    }
+
+    &.off {
+      transition: left 0.3s ease;
+      left: 0;
+    }
+  }
+
+  &.on {
+    transition: all 0.3s ease;
+    background-color: #75cac3;
+  }
+
+  &.off {
+    transition: all 0.3s ease;
+    background-color: #f18c8e;
+  }
+
+  &.disabled {
+    transition: all 0.3s ease;
+    cursor: not-allowed;
+
+    @include themify($themes) {
+      background-color: themed('background-darker');
+    }
+  }
+}

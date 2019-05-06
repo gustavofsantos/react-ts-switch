@@ -1,0 +1,17 @@
+@import "./themes/themes";
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 1rem 0.6rem 1rem;
+  margin: 0.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: bold;
+
+  @include themify($themes) {
+    color: themed('foreground');
+    background-color: themed('background-darker');
+  }
+}
